@@ -8,7 +8,7 @@ class SearchHitForm extends Component {
 
         this.state={
 
-            keyWordValue:'',
+            keyWordValue:''
 
 
         }
@@ -24,8 +24,8 @@ class SearchHitForm extends Component {
 
       doSearch = (event) => {
         
-        event.prevenDefault();
-        this.props.onSearch(this.props.keyWordValue);
+        event.preventDefault();
+        this.props.onSearch(this.state.keyWordValue);
       }
     
     render() {

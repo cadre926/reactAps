@@ -1,0 +1,20 @@
+{
+  "name": "reactaps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cadre926/reactAps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cadre926/reactAps/issues"
+  },
+  "homepage": "https://github.com/cadre926/reactAps#readme"
+}
