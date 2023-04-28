@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import HitIem from './HitIem';
+import SearchHitForm from './SearchHitForm';
+ 
+ 
 
 class Galery extends Component {
   constructor(props) {
@@ -40,14 +44,10 @@ class Galery extends Component {
   }
 
 
-  setKeyword = (event) => {
-    this.setState({
-      curentKeyWord: event.target.value
-    })
-  }
+ 
 
-  search = (event) => {
-    event.preventDefault()
+  search = () => {
+    
     this.githit();
   }
 
@@ -77,29 +77,15 @@ class Galery extends Component {
             }
           </ul>
         </div>
-        <form onSubmit={this.search}>
-          <div className='row m-2 p-2'>
-            <div className='col'>
-              <input type='text' className='form-control' placeholder='keyword'
-                value={this.state.curentKeyWord}
-                onChange={this.setKeyword} />
-            </div>
-            <div className='col col-auto'>
-              <button className='btn btn-success' type='submit'>Chercher</button>
-            </div>
-          </div>
-        </form>
+
+        <SearchHitForm onSearch={this.search}></SearchHitForm>
+        
         <div className='row'>
           {
             this.state.hits.map(hit =>
-              <div className='col-md-4' key={hit.id}>
-                <div className='card'>
-                  <div className='card-header'>{hit.tags}|{hit.webformatWidth}x{hit.webformatHeight}</div>
-                  <div className='card-body'>
-                    <img src={hit.webformatURL} className='card-img' height={200}  alt="hit "/>
-                  </div>
-                </div>
-              </div>
+
+                <HitIem hit={hit}></HitIem>
+            
             )
           }
         </div>

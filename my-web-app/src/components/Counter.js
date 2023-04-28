@@ -65,7 +65,7 @@ class Counter extends Component {
             {
               this.state.list.map((v, index) =>
                 <span  key={index}>{index}
-                  <img width={100} src={this.props.image?this.props.image:'images/profile.png'} />
+                  <img width={100} src={this.props.image?this.props.image:'images/profile.png'} alt="" />
 
                 </span>
 
