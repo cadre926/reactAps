@@ -8,7 +8,7 @@ class SearchHitForm extends Component {
 
         this.state={
 
-            keyWordValue:''
+            keyWordValue:"paris"
 
 
         }
