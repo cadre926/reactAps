@@ -28,7 +28,7 @@ class Galery extends Component {
       + "&per_page=" + this.state.pageSize;
     axios.get(url).then((resp) => {
       let totalP = (resp.data.totalHits % this.state.pageSize === 0)
-        ? resp.data.totalHits / this.state.pageSize : 1 + resp.data.totalHits / this.state.pageSize
+        ? resp.data.totalHits / this.state.pageSize : Math.floor(1 + resp.data.totalHits / this.state.pageSize) 
 
 
       this.setState({
@@ -43,11 +43,15 @@ class Galery extends Component {
     })
   }
 
-
- 
-
   search = (keyword) => {
-    this.githit();
+    this.setState({
+        curentPage:1,
+        pages: []
+
+    },()=>{
+      this.githit();
+    })
+  
     
   }
 

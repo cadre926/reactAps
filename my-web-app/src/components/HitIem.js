@@ -11,7 +11,10 @@ class HitIem extends Component {
         return (
             <div className={this.props.details === false ? 'col-md-4 mt-2' : 'm-2'} key={this.props.hit.id}>
                 <div className='card'>
-                    <div className='card-header'>{this.props.details === false ? this.props.hit.tags:'Details'}|{this.props.hit.webformatWidth}x{this.props.hit.webformatHeight}</div>
+                    <div className='card-header'>{this.props.details === false ? this.props.hit.tags:'Details'}
+                    |{this.props.details === false ?this.props.hit.webformatWidth:this.props.hit.imageWitdh}
+                    x{this.props.details === false ?this.props.hit.webformatHeight:this.props.hit.imageHeight}                
+                    </div>
                     <div className='card-body'>
 
                         {
